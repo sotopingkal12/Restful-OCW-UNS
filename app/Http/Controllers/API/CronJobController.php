@@ -23,7 +23,8 @@ class CronJobController extends Controller
 		$pesan = '';
 		foreach ($data as $row) {
 			if(strpos($row[4], 'Anda Belum Presensi') !== false) {
-				$link = "https://ocw.uns.ac.id/". explode('">',substr($row[4], strpos($row[4], 'href="') + 6))[0];
+				$link = "https://ocw.uns.ac.id". explode('">',substr($row[4], strpos($row[4], 'href="') + 6))[0];
+				$link = str_replace('&amp;', '&', $link);
 				$pesan .= "
 				Matkul : $row[1]
 				Waktu : $row[2]
