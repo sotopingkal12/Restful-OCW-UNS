@@ -9,7 +9,7 @@ class WhatsappService {
 
 	public function sendMessage($pesan) 
 	{
-		$ch = curl_init("https://api.callmebot.com/whatsapp.php?phone=+6281239466830&text=". urlencode($pesan) ."&apikey=323471");
+		$ch = curl_init("https://api.callmebot.com/whatsapp.php?phone=+6281228879002&text=". urlencode($pesan) ."&apikey=743232");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); // Follow Reditect
