@@ -42,7 +42,7 @@ class PresensiBerlangsung implements ShouldQueue
 		
 		$pesan = '';
 		foreach ($data as $row) {
-			if(strpos($row[4], 'Anda Belum Presensi') !== false) {
+			//if(strpos($row[4], 'Anda Belum Presensi') !== false) {
 				$link = "https://ocw.uns.ac.id". explode('">',substr($row[4], strpos($row[4], 'href="') + 6))[0];
 				$link = str_replace('&amp;', '&', $link);
 				$pesan .= "
@@ -52,13 +52,13 @@ class PresensiBerlangsung implements ShouldQueue
 				Link : $link
 				=======================
 				";
-			}
+			//}
 		}
         
         
         echo $pesan;
 		if($pesan) {
-			(new WhatsappService)->sendMessage($pesan);
+			//(new WhatsappService)->sendMessage($pesan);
 		}
     }
 }
