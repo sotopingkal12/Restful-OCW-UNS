@@ -109,7 +109,9 @@ class OCWService {
 			$ocwService->setSAML($path, Saml::first()->saml);
 			$html = $ocwService->getDataOCW($path,$link);
 			if(strpos($html,'Masukkan email dan password anda')){
-				Saml::first()->delete();
+				if($samldb = Saml::first()) {
+					$samldb->delete();
+				}
 			} else {
 				$logged = true;
 			}
