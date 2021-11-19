@@ -58,7 +58,6 @@ class PresensiBerlangsung implements ShouldQueue
         
 		if($pesan) {
 			(new WhatsappService)->sendMessage($pesan);
-            echo $pesan;
 		}
     }
 }
