@@ -13,7 +13,7 @@ class CronJobController extends Controller
 {
     public function runCron() 
 	{
-		dispatchSync(new PresensiBerlangsung())
+		 PresensiBerlangsung::dispatchSync()
 			->onConnection('database')
 			->onQueue('default');
 	}
